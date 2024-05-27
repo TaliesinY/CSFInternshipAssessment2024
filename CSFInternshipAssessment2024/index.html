@@ -1,0 +1,37 @@
+<!--
+    Taliesin Yip Hoi-Lee
+    CSFInternshipAssessment2024
+    2024-05-25
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/coinmarketcap-icon.png">
+    <title>Stock API Form</title>
+    <script scr="server.js"></script>
+</head>
+<body>
+    <div class="header">
+        <button onclick="window.location.href='index.html'">CoinCap API Form</button>
+    </div>
+    <br>
+    <form style="display:inline-flex" id="homeSearch">
+        <img src="https://www.iconpacks.net/icons/1/free-search-icon-779-thumb.png" alt="Image failed to load" height="7%" width="7%">
+        <input type="text" id="stockID" placeholder="Enter A Stock Name">
+        <input type="submit" placeholder="Search">
+    </form>
+    <script>
+        const form = document.getElementById('homeSearch');
+        const stockID = document.getElementById("stockID");
+        form.addEventListener("submit", function(event){
+            event.preventDefault();
+            const stockIDValue = stockID.value;
+            localStorage.setItem('stockID', stockIDValue);
+            window.location.href='searchResult.html';
+        });
+    </script>
+</body>
+</html>
